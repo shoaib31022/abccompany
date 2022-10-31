@@ -1,0 +1,47 @@
+﻿@model abccompany.Models.user
+
+@{
+    ViewBag.Title = "Create";
+}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 my-5"> <h2>Add New User </h2></div>
+            <div class="col">
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <form>
+                        <div class="row p-3 g-3">
+                            <div class="col-6">
+                                <input type="text" class="form-control" name="userName" placeholder="Full Name" aria-label="Full Name">
+                            </div>
+                            <div class="col-6">
+                                <input type="number" class="form-control" name="userContact" placeholder="Contact" aria-label="Contact">
+                            </div>
+                            <div class="col-6">
+                                <select id="inputState" name="userGender" class="form-select">
+                                    <option selected hidden>Gender</option>
+                                    <option value="female" >Female</option>
+                                    <option value="male" >Male</option>
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <input type="email" class="form-control" name="userEmail" placeholder="Email" aria-label="Email">
+                            </div>
+                        </div>
+                        <div class="col text-center">
+                            <button type="submit" value="Create"  class="btn btn-primary">Add</button>
+                            <button class="btn btn-primary"> @Html.ActionLink("Cancel", "Users")</button>
+                            
+                        </div>
+                    </form>
+                }
+
+            </div>
+        </div>
+    </div>
+</section>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

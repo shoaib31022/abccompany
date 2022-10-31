@@ -1,0 +1,42 @@
+﻿@model abccompany.Models.user
+
+
+@{ var Uid = Html.DisplayFor(model => model.userID);
+   var Ucontact = Html.DisplayFor(model => model.userContact);
+   var Ugender = Html.DisplayFor(model => model.userGender);
+   var Uemail = Html.DisplayFor(model => model.userEmail);}
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 my-5">
+                <h2>Detail of @Html.DisplayFor(model => model.userName)</h2>
+            </div>
+            <div class="col">
+                <div class="row p-3 g-3">
+                    <div class="col-6">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control" disabled value="@Uid">
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label">Contact</label>
+                        <input type="text" class="form-control" disabled value="@Ucontact">
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label">Gender</label>
+                        <input type="text" class="form-control" disabled value="@Ugender">
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label">Email</label>
+                        <input type="text" class="form-control" disabled value="@Uemail">
+                    </div>
+                </div>
+                <div class="col text-center">
+                    <button class="btn btn-primary"> @Html.ActionLink("Edit", "Edit", new { id = Model.userID })</button>
+                    <button class="btn btn-primary"> @Html.ActionLink("Cancel", "Users")</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
